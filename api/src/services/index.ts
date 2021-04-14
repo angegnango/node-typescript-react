@@ -16,5 +16,17 @@ const storeSensorRecord = (payload:any=null) => {
 
 }
 
+const getSensors = () => {
 
-export default { storeSensorRecord };
+    const sensorsList = new Set(database.map((record:any) => record.sensor));
+
+    const sensorNames = Array.from(sensorsList);
+
+    const sensors = sensorNames.map((sensor, index) => { return {id: index+1, sensor }});
+
+    return sensors;
+
+}
+
+
+export default { storeSensorRecord, getSensors };
