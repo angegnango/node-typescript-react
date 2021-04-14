@@ -7,7 +7,7 @@ export default function expressApp(){
     app.use(cors());
     app.use(express.json());
 
-    app.get('/', (req: Request, res: Response) => res.send(200));
+    app.get('/', (req: Request, res: Response) => res.sendStatus(200));
 
     return app;
 
