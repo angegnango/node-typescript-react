@@ -28,5 +28,19 @@ const getSensors = () => {
 
 }
 
+const getOccupancy =(sensor:any, atInstant:any=null)=> {
+    
+    let sensorRecords = database.filter((record:any) => record.sensor==sensor);
+        
+    if (atInstant!=null) sensorRecords = sensorRecords.filter((record:any)=> record.ts==atInstant);
 
-export default { storeSensorRecord, getSensors };
+    const peoplesIn = sensorRecords.reduce((a:number,b:any)=> a+b['in'], 0);
+
+    const peoplesOut = sensorRecords.reduce((a:number,b:any)=> a+b['out'], 0);
+
+    return peoplesIn - peoplesOut;
+
+}
+
+
+export default { storeSensorRecord, getSensors, getOccupancy };
