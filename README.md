@@ -12,7 +12,8 @@ To Run this project follow the steps belows.\
 ## Start Express API
 
 1- Navigate to /api folder .\
-2- Run this command `npm start`
+2- Run this command `npm install`
+3- Run this command `npm start`
 
 Your server will run on http://localhost:3001
 
@@ -26,7 +27,8 @@ GET : http://localhost:3001/api/occupancy : to show occupancy .\
 ## Start the React App
 
 1- Navigate to /client folder .\
-2- Run this command `yarn start`
+2- Run this command `npm install`
+3- Run this command `yarn start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
